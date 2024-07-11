@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafe", "Cafe\Cafe.csproj", "{6DAAAE57-CD31-4AA8-8586-5410DFD6C3D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APP.COMMON", "APP.COMMON\APP.COMMON.csproj", "{85107C42-99A7-4090-99B8-DDB85C6C26CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APP.Security", "APP.Security\APP.Security.csproj", "{3E246F5F-65B4-42B5-873C-7275A8CF0BB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DAAAE57-CD31-4AA8-8586-5410DFD6C3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DAAAE57-CD31-4AA8-8586-5410DFD6C3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DAAAE57-CD31-4AA8-8586-5410DFD6C3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DAAAE57-CD31-4AA8-8586-5410DFD6C3D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85107C42-99A7-4090-99B8-DDB85C6C26CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85107C42-99A7-4090-99B8-DDB85C6C26CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85107C42-99A7-4090-99B8-DDB85C6C26CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85107C42-99A7-4090-99B8-DDB85C6C26CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E246F5F-65B4-42B5-873C-7275A8CF0BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E246F5F-65B4-42B5-873C-7275A8CF0BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E246F5F-65B4-42B5-873C-7275A8CF0BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E246F5F-65B4-42B5-873C-7275A8CF0BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {596573EB-F5F3-45EF-9A3C-6C0098DD4710}
+	EndGlobalSection
+EndGlobal
