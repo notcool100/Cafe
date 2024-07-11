@@ -7,7 +7,7 @@ trigger:
 - feature/dashboard
 
 pool:
-  vmImage: 'windows-latest'
+  name: 'Anjal'
 
 variables:
   solution: 'Cafe.sln'
