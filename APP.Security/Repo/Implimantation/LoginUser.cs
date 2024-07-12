@@ -89,10 +89,6 @@ namespace APP.Security.Repo.Implimantation
                         }
                         else
                         {
-                            if (user.UserName != null)
-                            {
-                                user.isLoginSucess = true;
-                            }
                             response.IsSuccess = true;
                             response.ResponseData = user;
                         }

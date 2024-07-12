@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APP.Security.Models
+namespace APP.Security
 {
-    internal class ATTLoginUser
+    public class ATTLoginUser
     {
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }

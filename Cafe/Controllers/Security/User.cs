@@ -1,5 +1,4 @@
-﻿
-using APP.COMMON;
+﻿using APP.COMMON;
 using APP.Security;
 using Entity.Security;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +7,8 @@ namespace Cafe.Controllers.Security
 {
     public class User : Controller
     {
-        public readonly ILoginUser  _loginUser;
+        private readonly ILoginUser _loginUser;
+
         public User(ILoginUser loginUser)
         {
             _loginUser = loginUser;
@@ -21,12 +21,12 @@ namespace Cafe.Controllers.Security
 
         [HttpPost]
         [Route("CreateRecord")]
-        public async Task<JsonResponse>CreateRecord(ATTUserProfile request)
+        public JsonResponse CreateRecord(ATTUserProfile request)
         {
-            JsonResponse response = null;
+            JsonResponse response = new JsonResponse();
             try
             {
-                response =  _loginUser.CreateUser(request);
+                response = _loginUser.CreateUser(request);
             }
             catch (Exception ex)
             {
@@ -35,11 +35,12 @@ namespace Cafe.Controllers.Security
             }
             return response;
         }
+
         [HttpPost]
         [Route("LoginUser")]
-        public async Task<JsonResponse>LoginUser(ATTUserProfile profile)
+        public JsonResponse LoginUser([FromBody] ATTUserProfile profile)
         {
-            JsonResponse response = null;
+            JsonResponse response = new JsonResponse();
             try
             {
                 response = _loginUser.Login(profile);
@@ -51,31 +52,34 @@ namespace Cafe.Controllers.Security
             }
             return response;
         }
+
         [HttpGet]
         [Route("GetUser")]
-        public async Task<JsonResponse> GetUser()
+        public JsonResponse GetUser()
         {
-            JsonResponse response = null;
+            JsonResponse response = new JsonResponse();
             try
             {
                 response = _loginUser.GetUser();
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 response.IsSuccess = false;
                 response.Message = ex.Message;
             }
             return response;
         }
+
         [HttpPost]
         [Route("UpdateUser")]
-        public async Task<JsonResponse> UpdateUser(ATTUserProfile? profile)
+        public JsonResponse UpdateUser(ATTUserProfile profile)
         {
-            JsonResponse response = null;
+            JsonResponse response = new JsonResponse();
             try
             {
                 response = _loginUser.UpdateUser(profile);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
                 response.ResponseData = ex.Message;
