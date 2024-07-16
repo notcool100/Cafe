@@ -4,7 +4,8 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 // Add services to the container.
 var services = builder.Services;
 services.AddSecurityServices();
-services.AddSecurityServices();
+services.AddAdminServices();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

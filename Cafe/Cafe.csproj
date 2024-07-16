@@ -9,6 +9,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\APP.COMMON\APP.COMMON.csproj" />
 		<ProjectReference Include="..\APP.Security\APP.Security.csproj" />
+		<ProjectReference Include="..\APP.Admin\APP.Admin.csproj" />
 	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
