@@ -15,11 +15,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:5173") 
+                          policy.WithOrigins("http://localhost:5173",
+                                             "http://anjaljoshi-001-site1.dtempurl.com") // Add your deployment URL
                                 .AllowAnyHeader()
-                                .AllowAnyMethod(); 
+                                .AllowAnyMethod();
                       });
 });
+
 var app = builder.Build();
 
 app.Use(async (context, next) =>
@@ -33,10 +35,8 @@ app.Use(async (context, next) =>
     await next();
 });
 
-    app.UseSwagger();
-    app.UseSwaggerUI();
-
-app.UseSwaggerUI(options => 
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
 });
