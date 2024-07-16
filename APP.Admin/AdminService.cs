@@ -1,7 +1,15 @@
-﻿namespace APP.Admin
+﻿using APP.Admin.Repo.Implimentation;
+using APP.Admin.Repo.Interface;
+
+namespace Microsoft.Extensions.DependencyInjection
 {
-    public class AdminService
+    public static class AdminServiceCollection
     {
+        public static IServiceCollection AddAdminServices(this IServiceCollection services)
+        {
+            services.AddTransient<IMenuItems, MenuItemRepo>();
+            return services;
+        }
 
     }
 }
