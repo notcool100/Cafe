@@ -6,7 +6,6 @@ pool:
 
 variables:
   solution: 'Cafe.sln'
-  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   publishPath: '$(build.artifactStagingDirectory)\WebApp'
 
@@ -17,24 +16,14 @@ steps:
 - task: NuGetAuthenticate@0
   displayName: 'Authenticate NuGet'
 
-- task: NuGetCommand@2
+- script: dotnet restore $(solution)
   displayName: 'Restore NuGet Packages'
-  inputs:
-    command: 'restore'
-    restoreSolution: '$(solution)'
-    feedsToUse: 'select'
-    vstsFeed: '<your-feed-id>'  # Replace with your feed ID
 
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  displayName: 'Build Solution'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'publish'
-    publishWebProjects: true
-    arguments: '-o $(publishPath)'
-    zipAfterPublish: false
-    modifyOutputPath: false
+- script: dotnet publish --configuration $(buildConfiguration) --output $(publishPath)
+  displayName: 'Publish Solution'
 
 - task: PublishBuildArtifacts@1
   inputs:
